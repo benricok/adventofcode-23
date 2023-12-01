@@ -21,7 +21,6 @@ struct entry dict[] = {
     "nine", 4, '9',
 };
 
-
 int main () {
     unsigned long total = 0;
     char * line = malloc(sizeof line * 100);
@@ -40,23 +39,27 @@ int main () {
             size_t bufflen = 0;
 
             for (int i = 0; i < len; i++) {
-                printf("Buffer: ");
-                for (size_t g = 0; g < 5; g++) {
-                    printf("%c", buff[g]);
-                }
-                printf("\n");
+                //printf("Buffer: ");
+                //for (size_t g = 0; g < 5; g++) {
+                //    printf("%c", buff[g]);
+                //}
+                //printf("\n");
 
                 if ('0' <= line[i] && line[i] <= '9') {
                     last = line[i];
-                    printf("Last: %c\n", last);
+                    printf("%c ", last);
                     if (!hasfirst++) {
                         first = line[i];  
                     }
                     bufflen = 0;
+                    strcpy(buff, "00000");
 
                 } else if ('a' <= line[i] && line[i] <= 'z') {
 
                     if (bufflen < 5) {
+                        if (buff[bufflen] == line[i]) {
+                            buff[bufflen+1] = '0';
+                        }
                         buff[bufflen++] = line[i];
                     } else {
                         for (size_t k = 0; k < 4; k++) {
@@ -75,12 +78,10 @@ int main () {
                             strncmp(dict[j].str, buff2, dict[j].len) == 0) {
                     
                             last = dict[j].n;
-                            printf("Last: %c\n", last);
+                            printf("%c ", last);
                             if (!hasfirst++) {
                                 first = dict[j].n;  
                             }
-                            bufflen = 0;
-                            strcpy(buff, "00000");
                             break;
                         }
                     } 
