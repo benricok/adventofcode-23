@@ -12,22 +12,21 @@ int main () {
         while ((read = getline(&line, &buflen, file)) != -1) {
             printf("%s", line);
             printf("length: %d\n", read);
-            char last = '0', first = '0';
+            char last = '0';
+            short first = 0;
             short hasfirst = 0;
 
             for (int i = 0; i < read; i++) {
                 if(48 <= line[i] && line[i] <= 57 ) {
                     last = line[i];
                     printf("%c ", last);
-                    if (!hasfirst++) 
-                        first = line[i];  
+                    if (!hasfirst++) {
+                        first = 10 * (line[i] - 0x30);
+                    }
                 }
             }
-            char val[] = "00"; 
-            val[0] = first;
-            val[1] = last;
-            short value = atoi(val);
-            printf("Exstracted value: %d\n\n", value);
+            short value = first + last - 0x30;
+            printf("\nExstracted value: %d\n\n", value);
             total += value;
         }
         printf("\n\nTotal is %d\n", total);

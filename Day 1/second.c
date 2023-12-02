@@ -39,12 +39,6 @@ int main () {
             size_t bufflen = 0;
 
             for (int i = 0; i < len; i++) {
-                //printf("Buffer: ");
-                //for (size_t g = 0; g < 5; g++) {
-                //    printf("%c", buff[g]);
-                //}
-                //printf("\n");
-
                 if ('0' <= line[i] && line[i] <= '9') {
                     last = line[i];
                     printf("%c ", last);
