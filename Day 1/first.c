@@ -30,6 +30,7 @@ int main () {
             total += value;
         }
         printf("\n\nTotal is %d\n", total);
+        fclose(file);
     } else {
         printf("ERROR: No file!!");
     }

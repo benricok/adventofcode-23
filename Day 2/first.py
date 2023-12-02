@@ -54,4 +54,5 @@ for index, game in enumerate(games):
 
 print(validgames)
 print(sum(validgames))
-        
+
+file.close()

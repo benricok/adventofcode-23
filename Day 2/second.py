@@ -46,4 +46,4 @@ for index, game in enumerate(games):
 
 print(f"\n\nSum of powers: {sum(powers)}")
 
-
+file.close()

@@ -90,6 +90,7 @@ int main () {
         }
         free(line);
         printf("\n\nTotal is %d\n", total);
+        fclose(file);
     } else {
         printf("ERROR: No file!!");
     }
