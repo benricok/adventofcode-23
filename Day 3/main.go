@@ -42,7 +42,7 @@ func main() {
     for sc.Scan() {
 		if n < rows {
 			arr[n] = sc.Text() 
-			fmt.Println(arr[n] + "\n")
+			//fmt.Println(arr[n] + "\n")
 		} else {
 			break
 		}
@@ -70,7 +70,7 @@ func main() {
 				endIdx = j
 			}
 
-			if !isDigit && startIdx > -1 && endIdx > -1 {
+			if (j == coloumbs -1 || !isDigit) && (startIdx > -1 && endIdx > -1) {
 				curnum := line[startIdx:endIdx+1]
 				fmt.Println("\nCurrent number: " + curnum)
 
@@ -147,5 +147,5 @@ func main() {
 			}
 		}
 	}
-	fmt.Printf("\n\nSum: %d\n", sum + 446 + 941) // bug lol
+	fmt.Printf("\n\nSum: %d\n", sum)
 }
