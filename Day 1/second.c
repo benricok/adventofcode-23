@@ -31,7 +31,7 @@ int main () {
     if (file) {
         while ((len = getline(&line, &buflen, file)) != -1) {
             printf("%s", line);
-            printf("length: %d\n", len);
+            printf("length: %lu\n", len);
             char last = '0', first = '0';
             short hasfirst = 0;
 
